@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Stock Page</title>
+    <link href="stockPage.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.stock.min.js"></script>
+</head>
+<body>
+    <h1 id="companyName">Apple Inc.</h1>
+    <h4 id="symbol">AAPL</h4>
+
+    <h2 id="currentPrice">167.30</h2>
+
+    <div id="change">
+        <h4 id="pchange" style="text-align:left">-1.58 (2.65%)</h4>
+        <h7 id="prevClose" style="text-align:left ">Previous close</h7>
+    </div>
+
+    <div id="chart">
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        <table id="buttons" class="buttons">
+            <tr>
+                <button id="day" class="chart_buttons">Days</button>
+                <button id="month" class="chart_buttons">Months</button>
+                <button id="year" class="chart_buttons">Years</button>
+            </tr>
+        </table>
+    </div>
+
+    <div id="Summary/Details">
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Summary')">Summary</button>
+
+            <button class="tablinks" onclick="openCity(event, 'Financial_Analysis')" id="opened">Financial Analysis</button>
+
+        </div>
+    </div>
+
+    <div id="Summary" class="tabcontent">
+        <center>
+            <table id="Summary_table">
+                <tr>
+                    <td>Previous Close</td>
+                    <td id="regularMarketPreviousClose">0.00</td>
+                </tr>
+                <tr>
+                    <td>Open</td>
+                    <td id="regularMarketOpen">0.00</td>
+                </tr>
+                <tr>
+                    <td>Day Range</td>
+                    <td id="regularMarketDayRange">0.00</td>
+                </tr>
+                <tr>
+                    <td>Market Change</td>
+                    <td id="regularMarketChange">0.00</td>
+                </tr>
+                <tr>
+                    <td>Ask</td>
+                    <td id="ask">0.00</td>
+                </tr>
+                <tr>
+                    <td>Bid</td>
+                    <td id="bid">0.00</td>
+                </tr>
+                <tr>
+                    <td>52 week range</td>
+                    <td id="fiftyTwoWeekRange">0.00</td>
+                </tr>
+                <tr>
+                    <td>52 week average change</td>
+                    <td id="fiftyDayAverageChange">0.00</td>
+                </tr>
+                <tr>
+                    <td>200 average</td>
+                    <td id="twoHundredDayAverage">0.00</td>
+                </tr>
+                <tr>
+                    <td>200 average change</td>
+                    <td id="twoHundredDayAverageChange">0.00</td>
+                </tr>
+                <tr>
+                    <td>EPS current year</td>
+                    <td id="epsCurrentYear">0.00</td>
+                </tr>
+                <tr>
+                    <td>EPS trailing twelve months</td>
+                    <td id="epsTrailingTwelveMonths">0.00</td>
+                </tr>
+            </table>
+        </center>
+    </div>
+
+
+    <div id="Financial_Analysis" class="tabcontent">
+        <h3>Financial Analysis</h3>
+        <center>
+            <table id="fin_table">
+                <tr>
+                    <td>Recommendation</td>
+                    <td id="recommendationKey"></td>
+                </tr>
+                <tr>
+                    <td>Total Cash</td>
+                    <td id="totalCash"></td>
+                </tr>
+                <tr>
+                    <td>Total Cash Per Share</td>
+                    <td id="totalCashPerShare"></td>
+                </tr>
+                <tr>
+                    <td>Ebitda</td>
+                    <td id="ebitda"></td>
+                </tr>
+                <tr>
+                    <td>Total Debt</td>
+                    <td id="totalDebt"></td>
+                </tr>
+                <tr>
+                    <td>Quick Ratio</td>
+                    <td id="quickRatio"></td>
+                </tr>
+                <tr>
+                    <td>Current Ratio</td>
+                    <td id="currentRatio"></td>
+                </tr>
+                <tr>
+                    <td>Total Revenue</td>
+                    <td id="totalRevenue"></td>
+                </tr>
+                <tr>
+                    <td>Debt To Equity</td>
+                    <td id="debtToEquity"></td>
+                </tr>
+                <tr>
+                    <td>Revenue Per Share</td>
+                    <td id="revenuePerShare"></td>
+                </tr>
+                <tr>
+                    <td>Return On Assets</td>
+                    <td id="returnOnAssets"></td>
+                </tr>
+                <tr>
+                    <td>Return On Equity</td>
+                    <td id="returnOnEquity"></td>
+                </tr>
+                <tr>
+                    <td>Gross Profits</td>
+                    <td id="grossProfits"></td>
+                </tr>
+                <tr>
+                    <td>Free Cash flow</td>
+                    <td id="freeCashflow"></td>
+                </tr>
+                <tr>
+                    <td>Operating Cash flow</td>
+                    <td id="operatingCashflow"></td>
+                </tr>
+                <tr>
+                    <td>Earnings Growth</td>
+                    <td id="earningsGrowth"></td>
+                </tr>
+                <tr>
+                    <td>Revenue Growth</td>
+                    <td id="revenueGrowth"></td>
+                </tr>
+                <tr>
+                    <td>Gross Margins</td>
+                    <td id="grossMargins"></td>
+                </tr>
+                <tr>
+                    <td>Ebitda Margins</td>
+                    <td id="ebitdaMargins"></td>
+                </tr>
+                <tr>
+                    <td>Operating Margins</td>
+                    <td id="operatingMargins"></td>
+                </tr>
+                <tr>
+                    <td>Profit Margins</td>
+                    <td id="profitMargins"></td>
+                </tr>
+            </table>
+        </center>
+
+        <div id="Company_Overview" class="Company_Overview">
+            <h3>Company Overview</h3>
+            <p id="comp_overview">00</p>
+        </div>
+
+        <div id="Analysis">
+            <h3> Analysis </h3>
+            <br>
+            <h4> Technical events <label style="font-size:10px;">*(Data provided by <label id="provider"></label>)</label></h4>
+
+            <table id="tech_an">
+                <tr>
+                    <th>Short Term</th>
+                    <th>Mid-Term</th>
+                    <th>Long Term</th>
+                </tr>
+
+                <tr>
+                    <td id="shortTerm">1</td>
+                    <td id="midTerm">2</td>
+                    <td id="longTerm">3</td>
+                </tr>
+            </table>
+
+            <h4> Key Technicals <label style="font-size:10px;">*(Data provided by Trading Central)</label></h4>
+
+            <table id="tech_an">
+                <tr>
+                    <th>Support</th>
+                    <th>Resistance</th>
+                    <th>Stoploss</th>
+                </tr>
+
+                <tr>
+                    <td id="support">1</td>
+                    <td id="resistance">2</td>
+                    <td id="stoploss">3</td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <script src="stockPage.js"></script>
+</body>
+</html>

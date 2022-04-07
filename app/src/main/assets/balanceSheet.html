@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="balanceSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h1 style="text-align:center;">Annual Reports</h1>
+<div id="chartContainer" style="height: 370px; width: 95%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+<div class="balanceSheet" style="overflow-x:auto;">
+    <center>
+        <table>
+            <tr>
+                <th>Breakdown</th>
+                <th id="fiscalDateEnding0">Date1</th>
+                <th id="fiscalDateEnding1">Date2</th>
+                <th id="fiscalDateEnding2">Date3</th>
+                <th id="fiscalDateEnding3">Date4</th>
+                <th id="fiscalDateEnding4">Date5</th>
+            </tr>
+
+
+            <tr>
+                <td>Total Assets</td>
+                <td id="totalAssets0">01</td>
+                <td id="totalAssets1">02</td>
+                <td id="totalAssets2">03</td>
+                <td id="totalAssets3">04</td>
+                <td id="totalAssets4">05</td>
+            </tr>
+
+
+            <tr>
+                <td>Total Current Assets</td>
+                <td id="totalCurrentAssets0">01</td>
+                <td id="totalCurrentAssets1">02</td>
+                <td id="totalCurrentAssets2">03</td>
+                <td id="totalCurrentAssets3">04</td>
+                <td id="totalCurrentAssets4">05</td>
+            </tr>
+
+            <tr>
+                <td>Cash and Cash Equivalents at carrying value</td>
+                <td id="cashAndCashEquivalentsAtCarryingValue0">00</td>
+                <td id="cashAndCashEquivalentsAtCarryingValue1">00</td>
+                <td id="cashAndCashEquivalentsAtCarryingValue2">00</td>
+                <td id="cashAndCashEquivalentsAtCarryingValue3">00</td>
+                <td id="cashAndCashEquivalentsAtCarryingValue4">00</td>
+            </tr>
+
+            <tr>
+                <td>Cash and short tem investment</td>
+                <td id="cashAndShortTermInvestments0">00</td>
+                <td id="cashAndShortTermInvestments1">00</td>
+                <td id="cashAndShortTermInvestments2">00</td>
+                <td id="cashAndShortTermInvestments3">00</td>
+                <td id="cashAndShortTermInvestments4">00</td>
+            </tr>
+
+            <tr>
+                <td>Inventory</td>
+                <td id="inventory0">00</td>
+                <td id="inventory1">00</td>
+                <td id="inventory2">00</td>
+                <td id="inventory3">00</td>
+                <td id="inventory4">00</td>
+            </tr>
+
+            <tr>
+                <td>Current net recievables</td>
+                <td id="currentNetReceivables0">00</td>
+                <td id="currentNetReceivables1">00</td>
+                <td id="currentNetReceivables2">00</td>
+                <td id="currentNetReceivables3">00</td>
+                <td id="currentNetReceivables4">00</td>
+            </tr>
+
+            <tr>
+                <td>Total Non Current Assets </td>
+                <td id="totalNonCurrentAssets0">00</td>
+                <td id="totalNonCurrentAssets1">00</td>
+                <td id="totalNonCurrentAssets2">00</td>
+                <td id="totalNonCurrentAssets3">00</td>
+                <td id="totalNonCurrentAssets4">00</td>
+            </tr>
+
+            <tr>
+                <td>Property Plant Equipment</td>
+                <td id="propertyPlantEquipment0">00</td>
+                <td id="propertyPlantEquipment1">00</td>
+                <td id="propertyPlantEquipment2">00</td>
+                <td id="propertyPlantEquipment3">00</td>
+                <td id="propertyPlantEquipment4">00</td>
+            </tr>
+
+            <tr>
+                <td>Accumulated total Liabilities AmortizationPPE</td>
+                <td id="accumulatedDepreciationAmortizationPPE0">00</td>
+                <td id="accumulatedDepreciationAmortizationPPE1">00</td>
+                <td id="accumulatedDepreciationAmortizationPPE2">00</td>
+                <td id="accumulatedDepreciationAmortizationPPE3">00</td>
+                <td id="accumulatedDepreciationAmortizationPPE4">00</td>
+            </tr>
+
+            <tr>
+                <td>Intangible Assets</td>
+                <td id="intangibleAssets0">00</td>
+                <td id="intangibleAssets1">00</td>
+                <td id="intangibleAssets2">00</td>
+                <td id="intangibleAssets3">00</td>
+                <td id="intangibleAssets4">00</td>
+            </tr>
+
+            <tr>
+                <td>Intangible Assets Excluding Goodwill</td>
+                <td id="intangibleAssetsExcludingGoodwill0">00</td>
+                <td id="intangibleAssetsExcludingGoodwill1">00</td>
+                <td id="intangibleAssetsExcludingGoodwill2">00</td>
+                <td id="intangibleAssetsExcludingGoodwill3">00</td>
+                <td id="intangibleAssetsExcludingGoodwill4">00</td>
+            </tr>
+
+
+
+            <tr>
+                <td>Goodwill</td>
+                <td id="goodwill0">00</td>
+                <td id="goodwill1">00</td>
+                <td id="goodwill2">00</td>
+                <td id="goodwill3">00</td>
+                <td id="goodwill4">00</td>
+            </tr>
+
+            <tr>
+                <td>Investments</td>
+                <td id="investments0">00</td>
+                <td id="investments1">00</td>
+                <td id="investments2">00</td>
+                <td id="investments3">00</td>
+                <td id="investments4">00</td>
+            </tr>
+
+            <tr>
+                <td>Long Term Investments</td>
+                <td id="longTermInvestments0">00</td>
+                <td id="longTermInvestments1">00</td>
+                <td id="longTermInvestments2">00</td>
+                <td id="longTermInvestments3">00</td>
+                <td id="longTermInvestments4">00</td>
+            </tr>
+
+            <tr>
+                <td>Short Term Investments</td>
+                <td id="shortTermInvestments0">00</td>
+                <td id="shortTermInvestments1">00</td>
+                <td id="shortTermInvestments2">00</td>
+                <td id="shortTermInvestments3">00</td>
+                <td id="shortTermInvestments4">00</td>
+            </tr>
+
+            <tr>
+                <td>Other Current Assets</td>
+                <td id="otherCurrentAssets0">00</td>
+                <td id="otherCurrentAssets1">00</td>
+                <td id="otherCurrentAssets2">00</td>
+                <td id="otherCurrentAssets3">00</td>
+                <td id="otherCurrentAssets4">00</td>
+            </tr>
+
+            <tr>
+                <td>Other Non-Currrent Assets</td>
+                <td id="otherNonCurrrentAssets0">00</td>
+                <td id="otherNonCurrrentAssets1">00</td>
+                <td id="otherNonCurrrentAssets2">00</td>
+                <td id="otherNonCurrrentAssets3">00</td>
+                <td id="otherNonCurrrentAssets4">00</td>
+            </tr>
+
+            <tr>
+                <td>Total Liabilities</td>
+                <td id="totalLiabilities0">00</td>
+                <td id="totalLiabilities1">00</td>
+                <td id="totalLiabilities2">00</td>
+                <td id="totalLiabilities3">00</td>
+                <td id="totalLiabilities4">00</td>
+            </tr>
+
+            <tr>
+                <td>Total Current Liabilities</td>
+                <td id="totalCurrentLiabilities0">00</td>
+                <td id="totalCurrentLiabilities1">00</td>
+                <td id="totalCurrentLiabilities2">00</td>
+                <td id="totalCurrentLiabilities3">00</td>
+                <td id="totalCurrentLiabilities4">00</td>
+            </tr>
+
+            <tr>
+                <td>Current Accounts Payable</td>
+                <td id="currentAccountsPayable0">00</td>
+                <td id="currentAccountsPayable1">00</td>
+                <td id="currentAccountsPayable2">00</td>
+                <td id="currentAccountsPayable3">00</td>
+                <td id="currentAccountsPayable4">00</td>
+            </tr>
+
+            <tr>
+                <td>Deferred Revenue</td>
+                <td id="deferredRevenue0">00</td>
+                <td id="deferredRevenue1">00</td>
+                <td id="deferredRevenue2">00</td>
+                <td id="deferredRevenue3">00</td>
+                <td id="deferredRevenue4">00</td>
+            </tr>
+
+            <tr>
+                <td>Current Debt</td>
+                <td id="currentDebt0">00</td>
+                <td id="currentDebt1">00</td>
+                <td id="currentDebt2">00</td>
+                <td id="currentDebt3">00</td>
+                <td id="currentDebt4">00</td>
+            </tr>
+
+            <tr>
+                <td>Short Term Debt</td>
+                <td id="shortTermDebt0">00</td>
+                <td id="shortTermDebt1">00</td>
+                <td id="shortTermDebt2">00</td>
+                <td id="shortTermDebt3">00</td>
+                <td id="shortTermDebt4">00</td>
+            </tr>
+
+            <tr>
+                <td>Total Non Current Liabilities</td>
+                <td id="totalNonCurrentLiabilities0">00</td>
+                <td id="totalNonCurrentLiabilities1">00</td>
+                <td id="totalNonCurrentLiabilities2">00</td>
+                <td id="totalNonCurrentLiabilities3">00</td>
+                <td id="totalNonCurrentLiabilities4">00</td>
+            </tr>
+
+            <tr>
+                <td>Capital Lease Obligations</td>
+                <td id="capitalLeaseObligations0">00</td>
+                <td id="capitalLeaseObligations1">00</td>
+                <td id="capitalLeaseObligations2">00</td>
+                <td id="capitalLeaseObligations3">00</td>
+                <td id="capitalLeaseObligations4">00</td>
+            </tr>
+
+            <tr>
+                <td>Long Term Debt</td>
+                <td id="longTermDebt0">00</td>
+                <td id="longTermDebt1">00</td>
+                <td id="longTermDebt2">00</td>
+                <td id="longTermDebt3">00</td>
+                <td id="longTermDebt4">00</td>
+            </tr>
+
+
+            <tr>
+                <td>Current Long Term Debt</td>
+                <td id="currentLongTermDebt0">00</td>
+                <td id="currentLongTermDebt1">00</td>
+                <td id="currentLongTermDebt2">00</td>
+                <td id="currentLongTermDebt3">00</td>
+                <td id="currentLongTermDebt4">00</td>
+            </tr>
+
+            <tr>
+                <td>Long Term Debt Non current</td>
+                <td id="longTermDebtNoncurrent0">00</td>
+                <td id="longTermDebtNoncurrent1">00</td>
+                <td id="longTermDebtNoncurrent2">00</td>
+                <td id="longTermDebtNoncurrent3">00</td>
+                <td id="longTermDebtNoncurrent4">00</td>
+            </tr>
+
+            <tr>
+                <td>Short Long Term Debt Total</td>
+                <td id="shortLongTermDebtTotal0">00</td>
+                <td id="shortLongTermDebtTotal1">00</td>
+                <td id="shortLongTermDebtTotal2">00</td>
+                <td id="shortLongTermDebtTotal3">00</td>
+                <td id="shortLongTermDebtTotal4">00</td>
+            </tr>
+            <tr>
+                <td>Other Current Liabilities</td>
+                <td id="otherCurrentLiabilities0">00</td>
+                <td id="otherCurrentLiabilities1">00</td>
+                <td id="otherCurrentLiabilities2">00</td>
+                <td id="otherCurrentLiabilities3">00</td>
+                <td id="otherCurrentLiabilities4">00</td>
+            </tr>
+            <tr>
+                <td>Other Non Current Liabilities</td>
+                <td id="otherNonCurrentLiabilities0">00</td>
+                <td id="otherNonCurrentLiabilities1">00</td>
+                <td id="otherNonCurrentLiabilities2">00</td>
+                <td id="otherNonCurrentLiabilities3">00</td>
+                <td id="otherNonCurrentLiabilities4">00</td>
+            </tr>
+            <tr>
+                <td>Total Shareholder Equity</td>
+                <td id="totalShareholderEquity0">00</td>
+                <td id="totalShareholderEquity1">00</td>
+                <td id="totalShareholderEquity2">00</td>
+                <td id="totalShareholderEquity3">00</td>
+                <td id="totalShareholderEquity4">00</td>
+            </tr>
+            <tr>
+                <td>Treasury Stock</td>
+                <td id="treasuryStock0">00</td>
+                <td id="treasuryStock1">00</td>
+                <td id="treasuryStock2">00</td>
+                <td id="treasuryStock3">00</td>
+                <td id="treasuryStock4">00</td>
+            </tr>
+
+            <tr>
+                <td>Retained Earnings</td>
+                <td id="retainedEarnings0">00</td>
+                <td id="retainedEarnings1">00</td>
+                <td id="retainedEarnings2">00</td>
+                <td id="retainedEarnings3">00</td>
+                <td id="retainedEarnings4">00</td>
+            </tr>
+
+            <tr>
+                <td>Common Stock</td>
+                <td id="commonStock0">00</td>
+                <td id="commonStock1">00</td>
+                <td id="commonStock2">00</td>
+                <td id="commonStock3">00</td>
+                <td id="commonStock4">00</td>
+            </tr>
+
+            <tr>
+                <td>Common Stock Shares Outstanding</td>
+                <td id="commonStockSharesOutstanding0">00</td>
+                <td id="commonStockSharesOutstanding1">00</td>
+                <td id="commonStockSharesOutstanding2">00</td>
+                <td id="commonStockSharesOutstanding3">00</td>
+                <td id="commonStockSharesOutstanding4">00</td>
+            </tr>
+
+
+
+
+        </table>
+    </center>
+</div>
+<script src="balanceSheet.js"></script>
+</body>
+</html>

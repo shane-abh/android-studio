@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Real-time Price alert</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.css">
+
+    <style>
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 5px;
+  font-size: 16px;
+  width: 80%;
+  border-radius:10px;
+}
+  label{
+   border: 1px solid transparent;
+
+  padding: 5px;
+  font-size: 16px;
+
+  }
+
+  th{
+    font-size: 18px;
+  }
+
+
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+}
+
+  button{
+    background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+  td{
+    padding-top:10px;
+    padding-right:2px;
+/*     border: 1px solid; */
+  }
+th{
+
+font-size:15px;
+}
+
+
+</style>
+
+
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h1>Real-Time price Alert</h1>
+
+<div class="instruction">
+    <h2>How to Use:</h2>
+    <ul>
+        <li>If you want to sell a stock price at a particular limit above the current price, then you should set the price in the upper limit</li>
+        <li>If you want to buy a particular stock at a good price below the current price, then you should set the price in the lower limit</li>
+        <li>The price gets updated every 5s</li>
+        <li>To start click on the set button and to stop checking click on the stop button</li>
+    </ul>
+</div>
+
+<center>
+    <table id="table">
+
+
+
+        <tbody>
+        <tr>
+
+            <th style="width:40%">Search</th>
+            <th style="width:10%">Price</th>
+            <th style="width:25%">Upper Limit</th>
+            <th style="width:25%">Lower Limit</th>
+
+
+        </tr>
+
+        <tr>
+            <td >
+                <div class="autocomplete">
+                    <input id="myInput" type="text" class="Search" placeholder="Search">
+                </div>
+            </td>
+            <td style="text-align:center"><label id="currrentPrice1" class="currentPrice"></label> </td>
+            <td><input id="price" type= "number" placeholder="Sell" class="price" style="width50%"></input></td>
+            <td><input id="sprice" type= "number" placeholder="Buy" class="price"></input></td>
+
+        </tr>
+
+
+        <tr>
+            <td colspan="2" style="text-align:center"><button id="set" class="buttons">Set</button></td>
+            <td colspan="2" style="text-align:center"><button id="stop" class="buttons">Stop</button></td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="autocomplete">
+                    <input id="Search2" type="text" placeholder="Search" class="Search"/>
+                </div>
+            </td>
+            <td style="text-align:center"><label id="currrentPrice2" class="currentPrice"></label> </td>
+            <td><input id="price2" type= "number" placeholder="Sell" class="price"></input></td>
+            <td><input id="sprice2" type= "number" placeholder="Buy" class="price"></input></td>
+
+        </tr>
+
+
+        <tr>
+            <td  colspan="2" style="text-align:center"><button id="set2" class="buttons">Set</button></td>
+            <td  colspan="2" style="text-align:center"><button id="stop2" class="buttons">Stop</button></td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <div class="autocomplete">
+                    <input id="Search3" type="text" placeholder="Search" class="Search"/>
+                </div>
+            </td>
+            <td style="text-align:center"><label id="currrentPrice3" class="currentPrice"></label> </td>
+            <td><input id="price3" type= "number" placeholder="Sell" class="price"></input></td>
+            <td><input id="sprice3" type= "number" placeholder="Buy" class="price"></input></td>
+
+        </tr>
+
+        <tr>
+            <td  colspan="2" style="text-align:center"><button id="set3" class="buttons">Set</button></td>
+            <td  colspan="2" style="text-align:center"><button id="stop3" class="buttons">Stop</button></td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <div class="autocomplete">
+                    <input id="Search4"  type="text" placeholder="Search" class="Search"/>
+                </div>
+            </td>
+            <td style="text-align:center"><label id="currrentPrice4" class="currentPrice"></label> </td>
+            <td><input id="price4" type= "number" placeholder="Sell" class="price"></input></td>
+            <td><input id="sprice4" type= "number" placeholder="Buy" class="price"></input></td>
+
+        </tr>
+
+        <tr>
+            <td  colspan="2" style="text-align:center"><button id="set4" class="buttons">Set</button></td>
+            <td  colspan="2" style="text-align:center"><button id="stop4" class="buttons">Stop</button></td>
+        </tr>
+        </tbody>
+    </table>
+</center>
+
+<button id="getval"></button>
+
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyD1E00vfPdGjj8xpgerlh6hcxdm2iNjO8g",
+    authDomain: "search-f4f9c.firebaseapp.com",
+    databaseURL: "https://search-f4f9c-default-rtdb.firebaseio.com",
+    projectId: "search-f4f9c",
+    storageBucket: "search-f4f9c.appspot.com",
+    messagingSenderId: "997717398779",
+    appId: "1:997717398779:web:bbcb080b52207ba1bd0c5e",
+    measurementId: "G-DTRVF8D5T1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+  import {getDatabase, ref, set,get, child, update, remove} from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js"
+
+      const db = getDatabase();
+
+
+      var getval = document.getElementById("getval");
+      getval.addEventListener('click',function() {
+
+                console.log(document.getElementById("myInput").value);
+              });
+
+      var arr =[];
+      var arr2 = [];
+      var arr3 = [];
+
+      function SelectData(){
+        const dbref = ref(db);
+
+        get(child(dbref,"Search")).then((snapshot)=>{
+            if (snapshot.exists()){
+              // console.log(snapshot.val());
+              // arr.push(snapshot.val());
+
+
+              snapshot.child("/Symbol").forEach((childSnapshot) => {
+                var childKey = childSnapshot.key;
+                var childData = childSnapshot.val();
+                // console.log(childSnapshot.val());
+                arr.push(childSnapshot.val());
+              });
+
+              snapshot.child("/Stock Name").forEach((childSnapshot) => {
+                var childKey = childSnapshot.key;
+                var childData = childSnapshot.val();
+                // console.log(childSnapshot.val());
+                arr2.push(childSnapshot.val());
+              });
+
+//............................Adding search button........................
+              for (let i =0;i<arr.length;i++){
+                arr3.push({x:arr[i],y:arr2[i]});
+              }
+
+            //console.log(arr3[1].x);
+
+
+
+
+
+
+              var list = document.getElementById('select-state');
+              // arr3.forEach(function (item) {
+              //   var option = document.createElement('option');
+              //    option.value = item.x;
+              //   option.innerHTML = item.y;
+
+              //    list.appendChild(option);
+              // });
+
+              // for(let i =0;i<arr.length;i++){
+              //   var option = document.createElement('option');
+              //    option.value =arr[i];
+              //   option.innerHTML = arr2[i];
+
+              //    list.appendChild(option);
+              // }
+
+              autocomplete(document.getElementById("myInput"), arr3);
+              autocomplete(document.getElementById("Search2"), arr3);
+              autocomplete(document.getElementById("Search3"), arr3);
+              autocomplete(document.getElementById("Search4"), arr3);
+
+
+
+
+
+
+
+
+//.........................Button click listener..............................
+
+              var setbtn = document.getElementById("set");
+              setbtn.addEventListener('click',function() {
+
+                start1();
+                // check("myInput","price","sprice","currrentPrice1");
+                // console.log('clicked');
+              });
+
+              var setbtn2 = document.getElementById("set2");
+              setbtn2.addEventListener('click',function() {
+
+                check("Search2","price2","sprice2","currrentPrice2");
+              });
+
+                var setbtn3 = document.getElementById("set3");
+              setbtn3.addEventListener('click',function() {
+
+                start3();
+              });
+
+                var setbtn4 = document.getElementById("set4");
+              setbtn4.addEventListener('click',function() {
+
+                start4();
+              });
+
+
+
+              var stopbtn = document.getElementById("stop");
+              stopbtn.addEventListener('click',function() {
+
+                stop1();
+              });
+
+              var stopbtn3 = document.getElementById("stop3");
+              stopbtn3.addEventListener('click',function() {
+
+                stop3();
+              });
+
+              var stopbtn4 = document.getElementById("stop4");
+              stopbtn4.addEventListener('click',function() {
+
+                stop4();
+              });
+              // console.log(symbol);
+              // check(symbol,price);
+              // document.getElementById("kk").innerHTML = snapshot.val();
+
+            }
+          else{
+            console.log("No data");
+          }
+        })
+          .catch((error)=>{
+              console.log("Error  "+error);
+
+        });
+
+      }
+
+      SelectData();
+
+//..................................Search function.................................
+
+      function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      a.setAttribute("style", "width:100%");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].y.substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].y.substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].y.substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i].x+ "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              console.log(this.getElementsByTagName("input")[0].value);
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+// autocomplete(document.getElementById("myInput"), arr3);
+
+
+//................................Intervals.......................................
+      var inter1,inter2,inter3,inter4;
+
+      function start1(){
+
+        inter1 = setInterval(function(){
+          check("myInput","price","sprice","currrentPrice1");
+        },5000);
+
+      }
+
+      function stop1(){
+        console.log('Stopped');
+        clearInterval(inter1);
+      }
+
+
+
+
+      function start3(){
+
+        inter3 = setInterval(function(){
+          check("Search3","price3","sprice3","currrentPrice3");
+        },5000);
+
+      }
+
+
+      function stop3(){
+        console.log('Stopped inter3');
+        clearInterval(inter3);
+      }
+
+
+      function start4(){
+
+        inter4 = setInterval(function(){
+          check("Search4","price4","sprice4","currrentPrice4");
+        },5000);
+
+      }
+
+      function stop4(){
+        console.log('Stopped');
+        clearInterval(inter4);
+      }
+
+
+
+
+
+
+
+
+      function check(symbol,price,stoploss,currentPrice){
+
+        var symbol = document.getElementById(symbol).value;
+        var price = document.getElementById(price).value;
+        var stoploss = document.getElementById(stoploss).value;
+
+        const yfinance = new XMLHttpRequest();
+        const url = 'https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols='+symbol;
+
+
+        yfinance.open('GET', url, true);
+        yfinance.setRequestHeader('accept', 'application/json');
+        yfinance.setRequestHeader('x-api-key', 'Lu5ZHazc6d2jopuGKqhnD6wUXU7Kbhxg4nS3AXi7');
+
+
+        yfinance.onload = function () {
+            var  d = JSON.parse(this.response);
+
+            // console.log(d);
+            var curPrice = d.quoteResponse.result[0].regularMarketPrice;
+            document.getElementById(currentPrice).innerHTML = curPrice ;
+
+            if(parseFloat(curPrice)>price && price>0){
+              console.log('high');
+              console.log(curPrice);
+              document.getElementById(currentPrice).style.color = "#00DE7A";
+              document.getElementById(currentPrice).style.fontSize = "large";
+              Android.showToast(symbol + ' has reached its limit');
+            }else{
+              document.getElementById(currentPrice).style.color = "black";
+              document.getElementById(currentPrice).style.fontSize = "small";
+            }
+
+
+            if(parseFloat(curPrice)<stoploss){
+              console.log('Lower Limit Reached');
+              console.log(curPrice);
+              document.getElementById(currentPrice).style.color = "red";
+              document.getElementById(currentPrice).style.fontSize = "large";
+            }else{
+              document.getElementById(currentPrice).style.color = "black";
+              document.getElementById(currentPrice).style.fontSize = "small";
+            }
+
+        };
+        yfinance.send();
+
+      }
+
+
+</script>
+
+
+
+</body>
+</html>

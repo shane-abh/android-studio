@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/drawable/add.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/drawable/edittext_border.xml" value="0.3356164383561644" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/drawable/ic_baseline_expand_less_24.xml" value="0.3356164383561644" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout-w1240dp/fragment_annual.xml" value="0.23560910307898258" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout-w1240dp/portfolio_info.xml" value="0.1318607764390897" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout-w1240dp/transaction_row_layout.xml" value="0.1318607764390897" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_add_financials.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_balance_sheet.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_dash_board.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_edit.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_entering_search_details_to_firebase.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_expense_calculator_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_expense_details.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_financials.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_insertportfolio.xml" value="0.1824074074074074" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_portfolio.xml" value="0.1824074074074074" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_profile.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_real_time_price_alert.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_search.xml" value="0.1824074074074074" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/activity_stock_page.xml" value="0.1824074074074074" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/fragment_add_expense.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/fragment_add_income.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/fragment_annual.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/fragment_quaterly.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/fragment_tasks.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/nav_header.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/portfolio_info.xml" value="0.1824074074074074" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/record.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/ringing.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/layout/transaction_row_layout.xml" value="0.1824074074074074" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Mainproject/app/src/main/res/menu/nav_drawer.xml" value="0.1824074074074074" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

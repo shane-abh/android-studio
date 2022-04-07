@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Cash Flow</title>
+    <link href="balanceSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h1 style="text-align:center;">Annual Cash Flow Reports</h1>
+<div id="chartContainer3" style="height: 370px; width: 95%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+
+<div class="CashFlow" style="overflow-x:auto;">
+    <center>
+        <table>
+            <tr>
+                <th>Breakdown</th>
+                <th id="fiscalDateEnding_cash0">Date1</th>
+                <th id="fiscalDateEnding_cash1">Date2</th>
+                <th id="fiscalDateEnding_cash2">Date3</th>
+                <th id="fiscalDateEnding_cash3">Date4</th>
+                <th id="fiscalDateEnding_cash4">Date5</th>
+            </tr>
+
+            <tr>
+                <td>Operating Cashflow</td>
+                <td id="operatingCashflow0">Tot_rev1</td>
+                <td id="operatingCashflow1">Tot_rev2</td>
+                <td id="operatingCashflow2">Tot_rev3</td>
+                <td id="operatingCashflow3">Tot_rev4</td>
+                <td id="operatingCashflow4">Tot_rev5</td>
+            </tr>
+
+            <tr>
+                <td>Payments For Operating Activities</td>
+                <td id="paymentsForOperatingActivities0">Tot_rev1</td>
+                <td id="paymentsForOperatingActivities1">Tot_rev2</td>
+                <td id="paymentsForOperatingActivities2">Tot_rev3</td>
+                <td id="paymentsForOperatingActivities3">Tot_rev4</td>
+                <td id="paymentsForOperatingActivities4">Tot_rev5</td>
+            </tr>
+
+            <tr>
+                <td>Proceeds From Operating Activities</td>
+                <td id="proceedsFromOperatingActivities0">00</td>
+                <td id="proceedsFromOperatingActivities1">00</td>
+                <td id="proceedsFromOperatingActivities2">00</td>
+                <td id="proceedsFromOperatingActivities3">00</td>
+                <td id="proceedsFromOperatingActivities4">00</td>
+            </tr>
+
+            <tr>
+                <td>Change In Operating Liabilities</td>
+                <td id="changeInOperatingLiabilities0">00</td>
+                <td id="changeInOperatingLiabilities1">00</td>
+                <td id="changeInOperatingLiabilities2">00</td>
+                <td id="changeInOperatingLiabilities3">00</td>
+                <td id="changeInOperatingLiabilities4">00</td>
+            </tr>
+
+            <tr>
+                <td>Change In Operating Assets</td>
+                <td id="changeInOperatingAssets0">00</td>
+                <td id="changeInOperatingAssets1">00</td>
+                <td id="changeInOperatingAssets2">00</td>
+                <td id="changeInOperatingAssets3">00</td>
+                <td id="changeInOperatingAssets4">00</td>
+            </tr>
+
+            <tr>
+                <td>Depreciation Depletion And Amortization</td>
+                <td id="depreciationDepletionAndAmortization0">00</td>
+                <td id="depreciationDepletionAndAmortization1">00</td>
+                <td id="depreciationDepletionAndAmortization2">00</td>
+                <td id="depreciationDepletionAndAmortization3">00</td>
+                <td id="depreciationDepletionAndAmortization4">00</td>
+            </tr>
+
+            <tr>
+                <td>Capital Expenditures</td>
+                <td id="capitalExpenditures0">00</td>
+                <td id="capitalExpenditures1">00</td>
+                <td id="capitalExpenditures2">00</td>
+                <td id="capitalExpenditures3">00</td>
+                <td id="capitalExpenditures4">00</td>
+            </tr>
+
+            <tr>
+                <td>Change In Receivables</td>
+                <td id="changeInReceivables0">00</td>
+                <td id="changeInReceivables1">00</td>
+                <td id="changeInReceivables2">00</td>
+                <td id="changeInReceivables3">00</td>
+                <td id="changeInReceivables4">00</td>
+            </tr>
+
+            <tr>
+                <td>Change In Inventory</td>
+                <td id="changeInInventory0">00</td>
+                <td id="changeInInventory1">00</td>
+                <td id="changeInInventory2">00</td>
+                <td id="changeInInventory3">00</td>
+                <td id="changeInInventory4">00</td>
+            </tr>
+
+            <tr>
+                <td>Profit Loss</td>
+                <td id="profitLoss0">00</td>
+                <td id="profitLoss1">00</td>
+                <td id="profitLoss2">00</td>
+                <td id="profitLoss3">00</td>
+                <td id="profitLoss4">00</td>
+            </tr>
+
+            <tr>
+                <td>Cashflow From Investment0</td>
+                <td id="cashflowFromInvestment0">00</td>
+                <td id="cashflowFromInvestment1">00</td>
+                <td id="cashflowFromInvestment2">00</td>
+                <td id="cashflowFromInvestment3">00</td>
+                <td id="cashflowFromInvestment4">00</td>
+            </tr>
+
+
+
+            <tr>
+                <td>Cashflow From Financing</td>
+                <td id="cashflowFromFinancing0">00</td>
+                <td id="cashflowFromFinancing1">00</td>
+                <td id="cashflowFromFinancing2">00</td>
+                <td id="cashflowFromFinancing3">00</td>
+                <td id="cashflowFromFinancing4">00</td>
+            </tr>
+
+            <tr>
+                <td>Proceeds From Repayments Of ShortTerm Debt</td>
+                <td id="proceedsFromRepaymentsOfShortTermDebt0">00</td>
+                <td id="proceedsFromRepaymentsOfShortTermDebt1">00</td>
+                <td id="proceedsFromRepaymentsOfShortTermDebt2">00</td>
+                <td id="proceedsFromRepaymentsOfShortTermDebt3">00</td>
+                <td id="proceedsFromRepaymentsOfShortTermDebt4">00</td>
+            </tr>
+
+            <tr>
+                <td>Payments For Repurchase Of Common Stock</td>
+                <td id="paymentsForRepurchaseOfCommonStock0">00</td>
+                <td id="paymentsForRepurchaseOfCommonStock1">00</td>
+                <td id="paymentsForRepurchaseOfCommonStock2">00</td>
+                <td id="paymentsForRepurchaseOfCommonStock3">00</td>
+                <td id="paymentsForRepurchaseOfCommonStock4">00</td>
+            </tr>
+
+            <tr>
+                <td>Payments For Repurchase Of Equity</td>
+                <td id="paymentsForRepurchaseOfEquity0">00</td>
+                <td id="paymentsForRepurchaseOfEquity1">00</td>
+                <td id="paymentsForRepurchaseOfEquity2">00</td>
+                <td id="paymentsForRepurchaseOfEquity3">00</td>
+                <td id="paymentsForRepurchaseOfEquity4">00</td>
+            </tr>
+
+            <tr>
+                <td>Payments For Repurchase Of Preferred Stock</td>
+                <td id="paymentsForRepurchaseOfPreferredStock0">00</td>
+                <td id="paymentsForRepurchaseOfPreferredStock1">00</td>
+                <td id="paymentsForRepurchaseOfPreferredStock2">00</td>
+                <td id="paymentsForRepurchaseOfPreferredStock3">00</td>
+                <td id="paymentsForRepurchaseOfPreferredStock4">00</td>
+            </tr>
+
+            <tr>
+                <td>Dividend Payout</td>
+                <td id="dividendPayout0">00</td>
+                <td id="dividendPayout1">00</td>
+                <td id="dividendPayout2">00</td>
+                <td id="dividendPayout3">00</td>
+                <td id="dividendPayout4">00</td>
+            </tr>
+
+            <tr>
+                <td>Dividend Payout Common Stock</td>
+                <td id="dividendPayoutCommonStock0">00</td>
+                <td id="dividendPayoutCommonStock1">00</td>
+                <td id="dividendPayoutCommonStock2">00</td>
+                <td id="dividendPayoutCommonStock3">00</td>
+                <td id="dividendPayoutCommonStock4">00</td>
+            </tr>
+
+            <tr>
+                <td>Dividend Payout Preferred Stock</td>
+                <td id="dividendPayoutPreferredStock0">00</td>
+                <td id="dividendPayoutPreferredStock1">00</td>
+                <td id="dividendPayoutPreferredStock2">00</td>
+                <td id="dividendPayoutPreferredStock3">00</td>
+                <td id="dividendPayoutPreferredStock4">00</td>
+            </tr>
+
+            <tr>
+                <td>Proceeds From Issuance Of Common Stock</td>
+                <td id="proceedsFromIssuanceOfCommonStock0">00</td>
+                <td id="proceedsFromIssuanceOfCommonStock1">00</td>
+                <td id="proceedsFromIssuanceOfCommonStock2">00</td>
+                <td id="proceedsFromIssuanceOfCommonStock3">00</td>
+                <td id="proceedsFromIssuanceOfCommonStock4">00</td>
+            </tr>
+
+            <tr>
+                <td>Proceeds From Issuance Of Long Term Debt And Capital Securities Net</td>
+                <td id="proceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet0">00</td>
+                <td id="proceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet1">00</td>
+                <td id="proceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet2">00</td>
+                <td id="proceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet3">00</td>
+                <td id="proceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet4">00</td>
+            </tr>
+
+            <tr>
+                <td>Proceeds From Issuance Of Preferred Stock</td>
+                <td id="proceedsFromIssuanceOfPreferredStock0">00</td>
+                <td id="proceedsFromIssuanceOfPreferredStock1">00</td>
+                <td id="proceedsFromIssuanceOfPreferredStock2">00</td>
+                <td id="proceedsFromIssuanceOfPreferredStock3">00</td>
+                <td id="proceedsFromIssuanceOfPreferredStock4">00</td>
+            </tr>
+
+            <tr>
+                <td>Proceeds From Repurchase Of Equity</td>
+                <td id="proceedsFromRepurchaseOfEquity0">00</td>
+                <td id="proceedsFromRepurchaseOfEquity1">00</td>
+                <td id="proceedsFromRepurchaseOfEquity2">00</td>
+                <td id="proceedsFromRepurchaseOfEquity3">00</td>
+                <td id="proceedsFromRepurchaseOfEquity4">00</td>
+            </tr>
+
+            <tr>
+                <td>Proceeds From Sale Of Treasury Stock</td>
+                <td id="proceedsFromSaleOfTreasuryStock0">00</td>
+                <td id="proceedsFromSaleOfTreasuryStock1">00</td>
+                <td id="proceedsFromSaleOfTreasuryStock2">00</td>
+                <td id="proceedsFromSaleOfTreasuryStock3">00</td>
+                <td id="proceedsFromSaleOfTreasuryStock4">00</td>
+            </tr>
+
+            <tr>
+                <td>Change In Cash And Cash Equivalents</td>
+                <td id="changeInCashAndCashEquivalents0">00</td>
+                <td id="changeInCashAndCashEquivalents1">00</td>
+                <td id="changeInCashAndCashEquivalents2">00</td>
+                <td id="changeInCashAndCashEquivalents3">00</td>
+                <td id="changeInCashAndCashEquivalents4">00</td>
+            </tr>
+
+            <tr>
+                <td>Change In Exchange Rate</td>
+                <td id="changeInExchangeRate0">00</td>
+                <td id="changeInExchangeRate1">00</td>
+                <td id="changeInExchangeRate2">00</td>
+                <td id="changeInExchangeRate3">00</td>
+                <td id="changeInExchangeRate4">00</td>
+            </tr>
+
+
+
+
+            <tr>
+                <td>Net Income</td>
+                <td id="netIncome_cash0">00</td>
+                <td id="netIncome_cash1">00</td>
+                <td id="netIncome_cash2">00</td>
+                <td id="netIncome_cash3">00</td>
+                <td id="netIncome_cash4">00</td>
+            </tr>
+
+
+
+
+        </table>
+    </center>
+</div>
+<script src="annualCashFlowStatement.js"></script>
+
+</body>
+</html>

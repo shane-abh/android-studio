@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingTop="4sp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Upcoming Payments "
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"/>
+
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/task_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#F6F6F6">
+        </ListView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_task"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="8dp"
+            android:layout_gravity="right|bottom"
+            android:onClick="onAddClick"
+            android:src="@drawable/add"/>
+
+    </FrameLayout>
+
+
+
+
+
+
+<!--    <Button-->
+<!--        style="@style/widget"-->
+<!--        android:id="@+id/add_task"-->
+<!--        android:text="New Task"-->
+<!--        android:onClick="onAddClick" />-->
+
+
+</LinearLayout>

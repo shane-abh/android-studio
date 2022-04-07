@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mainproject">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MainProject">
+        <activity
+            android:name=".StockPlatform.RealTimePriceAlert"
+            android:exported="true" />
+        <activity
+            android:name=".StockPlatform.TechnicalAnalysis"
+            android:exported="true" />
+        <activity
+            android:name=".StockPlatform.CashFlowStatement"
+            android:exported="true" />
+        <activity
+            android:name=".StockPlatform.IncomeStatement"
+            android:exported="true" />
+        <activity
+            android:name=".StockPlatform.BalanceSheet"
+            android:exported="true" />
+        <activity
+            android:name=".StockPlatform.Financials"
+            android:exported="true" />
+        <activity
+            android:name=".StockPlatform.StockPage"
+            android:exported="true" />
+        <activity
+            android:name=".StockPlatform.Search"
+            android:exported="true" />
+        <activity
+            android:name=".ExpenseManager.ExpenseDetails"
+            android:exported="true" />
+        <activity
+            android:name=".ExpenseManager.AddFinancials"
+            android:exported="true" />
+        <activity
+            android:name=".ExpenseManager.ExpenseCalculatorMain"
+            android:exported="true" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".StockPlatform.MyPortfolio"
+            android:exported="true" />
+        <activity
+            android:name=".StockPlatform.InsertPortfolio"
+            android:exported="true" />
+        <activity
+            android:name=".EnteringSearchDetailsToFirebase"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".PaymentReminder.Ringing"
+            android:exported="true"
+            android:label="Ringing"
+             />
+        <activity
+            android:name=".PaymentReminder.EditActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PaymentReminder.DashBoardActivity"
+            android:exported="true"/>
+
+        <receiver
+            android:name=".PaymentReminder.TaskReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+    </application>
+
+</manifest>
